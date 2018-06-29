@@ -46,13 +46,17 @@
 
 <style lang="less">
   @import '~vux/src/styles/reset.less';
-
+  html {
+    height: 100%;
+  }
   body {
+    height: 100%;
     background: url('./assets/back01.jpg');
-    filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
     -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
     background-size: 100% 100%;
     background-attachment: fixed;
+    background-repeat: no-repeat;
   }
 
 </style>

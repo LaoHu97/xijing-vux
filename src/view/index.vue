@@ -2,7 +2,7 @@
   <div class="main">
     <x-header :left-options="{showBack: false}" class="top_header">
       <div slot="overwrite-title" class="xheader_icon">
-        <img src="../assets/logo.png" alt="">
+        <img :src="hraderImg" alt="">
       </div>
     </x-header>
     <div class="nav_main">
@@ -35,7 +35,8 @@
     data () {
       return {
         navList: [],
-        bottomTitle: ''
+        bottomTitle: '',
+        hraderImg: require('../assets/logo.png')
       }
     },
     methods: {
@@ -64,7 +65,11 @@
       this.getNavList()
     },
     created () {
-
+      if (querystring.parse().menutype === '2') {
+        this.hraderImg = require('../assets/logo.png')
+      } else if (querystring.parse().menutype === '3') {
+        this.hraderImg = require('../assets/logo1.png')
+      }
     }
   }
 </script>
