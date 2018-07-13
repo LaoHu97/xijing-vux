@@ -51,12 +51,9 @@
   }
   body {
     height: 100%;
-    background: url('./assets/back01.jpg');
-    -moz-background-size: 100% 100%;
-    -webkit-background-size: 100% 100%;
-    background-size: 100% 100%;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
+  }
+  #app {
+    height: 100%;
   }
 
 </style>

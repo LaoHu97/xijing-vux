@@ -18,6 +18,13 @@ module.exports = {
           '^/admin': '/admin'
         }
       },
+      '/pay': {
+        target: 'http://dev.weupay.com',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/pay': '/pay'
+        }
+      },
     },
 
     // Various Dev Server settings
@@ -69,7 +76,7 @@ module.exports = {
      * Source Maps
      */
 
-    productionSourceMap: true,
+    productionSourceMap: false,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
 

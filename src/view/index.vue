@@ -44,7 +44,13 @@
         if (!item) {
           return this.$vux.toast.text('配置错误，地址为空')
         }
-        window.location.href = item
+        if (item === 'http://map.com') {
+          this.$router.push({
+            path: '/map'
+          })
+        } else {
+          window.location.href = item
+        }
       },
       getNavList () {
         let para = {
@@ -65,8 +71,10 @@
       this.getNavList()
     },
     created () {
-      if (querystring.parse().menutype === '2') {
+      if (querystring.parse().menutype === '1') {
         this.hraderImg = require('../assets/logo.png')
+      } else if (querystring.parse().menutype === '2') {
+        this.hraderImg = require('../assets/logo2.png')
       } else if (querystring.parse().menutype === '3') {
         this.hraderImg = require('../assets/logo1.png')
       }
@@ -76,6 +84,17 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .main {
+    height: 100%;
+    background: url('../assets/back01.png');
+    -moz-background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position:50%;
+  }
   .main .nav_main {
     margin: 10px;
     border-radius: 8px;
@@ -93,14 +112,16 @@
   }
   .xheader_icon{
     margin: 5px 0;
+    text-align: center;
   }
   .xheader_icon img{
     width: 100%;
+    max-width: 258px;
   }
   .top_header{
     padding: 10px 0;
     border-bottom: 1px solid #999;
-    background: linear-gradient(#fff, #ADCEF7);
+    background: linear-gradient(#fff, #C9EDF8);
   }
   .nav_main_icon{
     border-radius: 12px;
@@ -110,5 +131,8 @@
   .main .nav_main .weui-grid__icon {
     width: 58px!important;
     height: 58px!important;
+  }
+  .weui-grid{
+    padding: 20px 0px!important;
   }
 </style>
