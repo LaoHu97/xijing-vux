@@ -77,6 +77,8 @@
         this.hraderImg = require('../assets/logo2.png')
       } else if (querystring.parse().menutype === '3') {
         this.hraderImg = require('../assets/logo1.png')
+      } else if (querystring.parse().menutype === '4') {
+        this.hraderImg = require('../assets/logo3.png')
       }
     }
   }
