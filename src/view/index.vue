@@ -12,7 +12,6 @@
         </grid-item>
       </grid>
     </div>
-    <div class="nav_bottom_title">{{bottomTitle}}</div>
   </div>
 </template>
 
@@ -47,6 +46,14 @@
         if (item === 'http://map.com') {
           this.$router.push({
             path: '/map'
+          })
+        } else if (item === 'http://img01.com') {
+          this.$router.push({
+            path: '/img01'
+          })
+        } else if (item === 'http://img02.com') {
+          this.$router.push({
+            path: '/img02'
           })
         } else {
           window.location.href = item
